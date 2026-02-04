@@ -6,6 +6,14 @@ def add_student(students):
     students[name] = grade
     print(f"{name} added with grade {grade}")
 
+def view_students(students):
+    if not students:
+        print("No students added yet.")
+    else:
+        print("\nStudents and Grades:")
+        for name, grade in students.items():
+            print(f"{name}: {grade}")
+
 def main():
     while True:
         print("\nStudent Grade Tracker")
@@ -18,7 +26,7 @@ def main():
         if choice == "1":
             add_student(students)
         elif choice == "2":
-            print("View students selected")
+            view_students(students)
         elif choice == "3":
             print("Goodbye!")
             break
